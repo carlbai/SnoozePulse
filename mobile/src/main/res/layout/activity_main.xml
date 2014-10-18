@@ -10,16 +10,34 @@
 
     <TextView
         android:id="@+id/title"
-        android:text="@string/hello_world"
+        android:text="@string/vibrate_setting"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="50dp" />
+
+    <Switch
+        android:id="@string/switch_button"
+        android:layout_alignParentRight="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textOn="On"
+        android:textOff="Off"
+        android:onClick="onSwitchClicked" />
+
+    <TextView
+        android:id="@+id/title2"
+        android:layout_below="@id/title"
+        android:text="@string/on_message"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp" />
 
     <Switch
         android:id="@string/switch_button"
         android:layout_below="@id/title"
+        android:layout_alignParentRight="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textOn="On"
-        android:textOff="Off" />
+        android:textOff="Off"
+        android:onClick="onSwitchClicked" />
 
 </RelativeLayout>

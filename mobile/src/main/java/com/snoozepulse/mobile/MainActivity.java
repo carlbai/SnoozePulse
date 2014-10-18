@@ -1,12 +1,20 @@
 package com.snoozepulse.mobile;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.Context;
 import android.os.Bundle;
+import android.os.Vibrator;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Switch;
 
 
 public class MainActivity extends Activity {
+
+    boolean vibrate;
+    public final static String VIBRATE = "com.snoozepulse.mobile.vibrate";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,19 +42,27 @@ public class MainActivity extends Activity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void onToggleClicked(View view) {
+    public void onSwitchClicked(View view) {
         // Is the toggle on?
-        boolean on = ((ToggleButton) view).isChecked();
-        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        boolean on = ((Switch) view).isChecked();
+        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
 
         if (on) {
             builder.setMessage(R.string.on_message);
             // Enable vibrate
+            vibrate = true;
+
+            Vibrator v = (Vibrator) this.getSystemService(Context.VIBRATOR_SERVICE);
+            // Vibrate for 500 milliseconds
+            v.vibrate(500);
         } else {
             builder.setMessage(R.string.off_message);
             // Disable vibrate
+            vibrate = false;
         }
 
         AlertDialog dialog = builder.create();
+        dialog.show();
+
     }
 }

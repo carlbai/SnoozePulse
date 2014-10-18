@@ -2,11 +2,10 @@
 <resources>
 
     <string name="app_name">Mobile</string>
-    <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="switch_button">PRESS ME</string>
     <string name="on_message">ON BITCH</string>
     <string name="off_message">OFF...man</string>
-    <string name="dialog_title">Something dialogue</string>
+    <string name="vibrate_setting">Vibrate on Wrist</string>
 
 </resources>
