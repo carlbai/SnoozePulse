@@ -33,4 +33,20 @@ public class MainActivity extends Activity {
         }
         return super.onOptionsItemSelected(item);
     }
+
+    public void onToggleClicked(View view) {
+        // Is the toggle on?
+        boolean on = ((ToggleButton) view).isChecked();
+        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+
+        if (on) {
+            builder.setMessage(R.string.on_message);
+            // Enable vibrate
+        } else {
+            builder.setMessage(R.string.off_message);
+            // Disable vibrate
+        }
+
+        AlertDialog dialog = builder.create();
+    }
 }
